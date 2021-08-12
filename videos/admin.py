@@ -9,6 +9,7 @@ class Videos(admin.ModelAdmin):
     search_fields = ('descricao',)
     list_filter = ('descricao',)
     list_per_page = 10
+    #Ordenação no Django Admin
     ordering = ('titulo',)
 
 class Categorias(admin.ModelAdmin):
