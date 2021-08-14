@@ -1,16 +1,20 @@
-# challenge-backend
-API desenvolvida segundo o padrão REST
+<h1>API desenvolvida segundo o padrão REST</h1>
 
-Essa API está sendo desenvolvida durante o #alurachallengeback, desafio promovido pela Alura, no período de 19 de Julho a 13 de Agosto.
+<p>Essa API está sendo desenvolvida durante o #alurachallengeback, desafio promovido pela Alura, no período de 19 de Julho a 13 de Agosto.</p>
 
-O desafio é agnóstico com relação à linguagens, frameworks, bases de dados e decisões de arquitetura, portanto todas as decisões de stack, bem como toda a implementação, é escolha e definição pessoal de cada participante.
+<ul>
 
+</ul>
 Stack selecionadas:
-Python
-Django
-PostgreSQL
-Pgadmin
-Redis
-Docker
-Postman
-Gunicorn
+    <li>Python</li>
+    <li>Django</li>
+    <li>Docker</li>
+    <li>PostgreSQL</li>
+    <li>Redis</li>
+    <li>PgAdmin</li>
+    <li>Postman</li>
+    <li>Gunicorn</li>
+</ul>
+
+<p>Sou muito grato ao grupo Alura pela oportunidade</p>
+
