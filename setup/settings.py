@@ -83,7 +83,8 @@ DATABASES = {
         'NAME': 'videos',
         'USER':'postgres',
         'PASSWORD':'tatutomeria',
-        'HOST': '172.18.0.2'
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 
@@ -135,6 +136,26 @@ REST_FRAMEWORK = {
 #    'PAGE_SIZE': 3
 #}
 
+# Integração com o redis - configuração default
+
+CACHES = {
+    "default": {
+        "BACKEND":"django_redis.cache.RedisCache",
+        "LOCATION": "redis://localhost:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+# O caching não funcionará no Django Admin
+SESSION_ENGINE =  'django.contrib.sessions.backends.cache'
+
+# Setando a variável com a configuração default
+SESSION_CACHE_ALIAS = "default"
+
+#Variável setada com o valor padrão de tempo de cache 
+CACHE_TTS=200
 
 
 # Default primary key field type

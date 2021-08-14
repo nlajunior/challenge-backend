@@ -1,3 +1,4 @@
+from setup.settings import CACHE_TTS
 from django.db.models.query import QuerySet
 #importa filters
 from rest_framework import serializers, viewsets, filters, generics
@@ -10,6 +11,9 @@ from django_filters.rest_framework import DjangoFilterBackend, filterset
 
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
+#Caching
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 
 class VideosViewSet(viewsets.ModelViewSet):
@@ -39,6 +43,11 @@ class CategoriasViewSet(viewsets.ModelViewSet):
     serializer_class = CategoriaSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
+
+    #Caching setado em 20s
+    @method_decorator(cache_page(CACHE_TTS))
+    def dispatch(self, *args, **kwargs):
+        return super(CategoriasViewSet, self).dispatch(*args, **kwargs)
 
 
 class VideosPorCategoriaViewSet(generics.ListAPIView):

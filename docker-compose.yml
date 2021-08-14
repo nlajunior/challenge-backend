@@ -1,0 +1,47 @@
+version: "3.4"
+services:
+    srvpts:
+        container_name: dbpt
+        image: postgres
+        env_file: ./envs/dbpt
+        networks:
+            - host
+        ports:
+            - 5432:5432
+        volumes:
+            - ~/volumes/postgresql:/var/lib/postgresql/data
+        restart: always
+    
+    srvpga:
+        container_name: pgadmin
+        image: dpage:pgadmin4 
+        env_file: ./envs/pga 
+        ports:
+            - 15432:80
+        networks: 
+            - host    
+    
+    srvdjg:
+        container_name: djg
+        build: ./
+        env_file: ./env/api
+        command: gunicorn --workers 3 --bind 0.0.0.0:5000 app:app
+        networks:
+            - host
+        ports:
+            - 5000:5000
+        depends_on:
+            - dbpt
+    srvredis: 
+        container_name: redis
+        image: redis:6.0
+        ports:
+            - 6379:6379
+        networks: 
+            - host
+        volumes:
+            - ~/volumes/redis:/data   
+  
+networks:
+    host:
+        driver: bridge
