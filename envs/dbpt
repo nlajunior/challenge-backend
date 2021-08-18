@@ -1,2 +1,6 @@
 TZ=America/Sao_Paulo
-POSTGRES_PASSWORD=tautomeria
+POSTGRES_PASSWORD=tatutomeria
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
+
+ 

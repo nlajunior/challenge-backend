@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@nyyenta^+kw)b6b8eha^(7l_q+3ei5#w0be-+ekvh!_7*oi_=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #pip install django-heroku
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'videos',
         'USER':'postgres',
         'PASSWORD':'tatutomeria',
-        'HOST': 'localhost',
+        'HOST': 'srvpts',
         'PORT': 5432
     }
 }

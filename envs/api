@@ -1,0 +1,5 @@
+TZ=America/Sao_Paulo
+PYTHONIOENCODING=utf-8
+PYTHONDONTWRITEBYTECODE=1
+PYTHONUNBUFFERED=1
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/challenge-backend/venv/bin
