@@ -26,6 +26,10 @@ class VideosViewSet(viewsets.ModelViewSet):
                        filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['titulo']
     search_fields = ['titulo']
+    #Filtrando por id menores que o parâmetro passado - http://localhost:8000/videos/?id__lt=3
+    filter_fields = {
+        'id' :["lt"]
+    }
     #filterset_fields = ['ativo']
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
